@@ -1,32 +1,50 @@
-# FLYING
+# ✈️ FLYING - Flight Booking Platform
 
-## Deploy to Vercel
+A full-stack flight booking application built with modern web technologies. Search for flights, create bookings, and securely complete payments all in one seamless experience.
 
-Import the repository into Vercel and keep the project root set to the repository
-root. The root `vercel.json` installs both applications, builds the Vite frontend,
-serves the `frontend/dist` output, and sends `/api/*` requests to the Express
-serverless function.
+## 🚀 Features
 
-Add these environment variables in the Vercel project settings for Production
-(and Preview if those deployments need the integrations):
+- **Flight Search**: Real-time flight search powered by Duffel API
+- **User Authentication**: Secure JWT-based authentication with bcrypt password hashing
+- **Booking Management**: Create and manage flight bookings with passenger details
+- **Secure Payments**: Stripe integration for secure checkout and payment processing
+- **Responsive UI**: Modern React frontend with Tailwind CSS styling
+- **MongoDB Database**: Persistent storage for users and bookings
+- **Production Ready**: Deployed on Vercel with serverless architecture
 
-| Variable | Purpose |
-| --- | --- |
-| `MONGO_URL` | MongoDB connection string |
-| `JWT_SECRET` | Random secret of at least 32 bytes |
-| `DUFFEL_ACCESS_TOKEN` | Duffel API access token for flight search |
-| `STRIPE_SECRET_KEY` | Stripe secret key for checkout |
-| `STRIPE_WEBHOOK_SECRET` | Stripe webhook signing secret |
-| `FRONTEND_ORIGIN` | Deployed frontend origin, such as `https://your-app.vercel.app` |
+## 🛠️ Tech Stack
 
-`PORT` is not needed on Vercel. `VITE_API_URL` is also not needed when the API
-and frontend are deployed under the same domain; the frontend uses relative
-`/api` requests by default.
+### Frontend
+- **React 19** - UI library
+- **Vite** - Build tool and dev server
+- **React Router** - Client-side routing
+- **Tailwind CSS** - Utility-first CSS framework
+- **Lucide React** - Icon library
+- **Stripe React** - Payment integration
 
-After deploying, configure the Stripe webhook endpoint as
-`https://your-app.vercel.app/api/payments/webhook` and subscribe to
-`checkout.session.completed` and `checkout.session.expired`.
+### Backend
+- **Express.js** - Web server framework
+- **Node.js** - Runtime environment
+- **MongoDB** - NoSQL database
+- **Mongoose** - MongoDB ODM
+- **JWT** - JSON Web Token authentication
+- **bcryptjs** - Password hashing
+- **Stripe** - Payment processing
+- **Duffel API** - Flight data provider
 
-For local development, run the backend and frontend separately using the scripts
-in `backend/package.json` and `frontend/package.json`. The frontend Vite server
-proxies `/api` requests to `http://localhost:5001`.
+## 📋 Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+- MongoDB instance (local or cloud)
+- Stripe account
+- Duffel API access token
+- Vercel account (for deployment)
+
+## 🔧 Environment Setup
+
+### Backend Setup
+
+1. Navigate to the backend directory:
+```bash
+cd backend
